@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051778F0292B5F26008EE768 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionModel.swift */; };
+		051778F3292B5FCA008EE768 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockNetworkService.swift */; };
+		051778F5292B5FDE008EE768 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* NetworkService.swift */; };
 		05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65612920E51F0042CB5B /* AppDelegate.swift */; };
 		05AC65642920E51F0042CB5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65632920E51F0042CB5B /* SceneDelegate.swift */; };
 		05AC656B2920E5200042CB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656A2920E5200042CB5B /* Assets.xcassets */; };
@@ -14,6 +17,7 @@
 		05AC65792920E5200042CB5B /* WorldOfPAYBACKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65782920E5200042CB5B /* WorldOfPAYBACKTests.swift */; };
 		05AC65832920E5200042CB5B /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */; };
 		05AC65852920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */; };
+		05C91A01292B463600D14A0F /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C91A00292B463600D14A0F /* PBTransactions.json */; };
 		E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BA19629281DD50054656C /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051778EF292B5F26008EE768 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		051778F2292B5FCA008EE768 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		051778F4292B5FDE008EE768 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		05AC655E2920E51F0042CB5B /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65612920E51F0042CB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AC65632920E51F0042CB5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		05AC657E2920E5200042CB5B /* WorldOfPAYBACKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
 		05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05C91A00292B463600D14A0F /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
 		E89BA19629281DD50054656C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		051778EE292B5E7D008EE768 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				051778EF292B5F26008EE768 /* TransactionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		051778F1292B5FA4008EE768 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				051778F2292B5FCA008EE768 /* MockNetworkService.swift */,
+				051778F4292B5FDE008EE768 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		05AC65552920E51F0042CB5B = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +122,11 @@
 		05AC65602920E51F0042CB5B /* WorldOfPAYBACK */ = {
 			isa = PBXGroup;
 			children = (
-				E89BA19529281DB10054656C /* AppCoordinator */,
-				E89BA19829281EEC0054656C /* SupportingFiles */,
+				051778F1292B5FA4008EE768 /* Network */,
+				051778EE292B5E7D008EE768 /* Model */,
+				05C91A02292B466400D14A0F /* Coordinator */,
+				E89BA19529281DB10054656C /* Application */,
+				05C919FF292B461800D14A0F /* Resources */,
 			);
 			path = WorldOfPAYBACK;
 			sourceTree = "<group>";
@@ -120,24 +148,32 @@
 			path = WorldOfPAYBACKUITests;
 			sourceTree = "<group>";
 		};
-		E89BA19529281DB10054656C /* AppCoordinator */ = {
+		05C919FF292B461800D14A0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05C91A00292B463600D14A0F /* PBTransactions.json */,
+				05AC656A2920E5200042CB5B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		05C91A02292B466400D14A0F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E89BA19629281DD50054656C /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		E89BA19529281DB10054656C /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				05AC65612920E51F0042CB5B /* AppDelegate.swift */,
 				05AC65632920E51F0042CB5B /* SceneDelegate.swift */,
-				E89BA19629281DD50054656C /* AppCoordinator.swift */,
-			);
-			path = AppCoordinator;
-			sourceTree = "<group>";
-		};
-		E89BA19829281EEC0054656C /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				05AC656A2920E5200042CB5B /* Assets.xcassets */,
 				05AC656C2920E5200042CB5B /* LaunchScreen.storyboard */,
 				05AC656F2920E5200042CB5B /* Info.plist */,
 			);
-			path = SupportingFiles;
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05AC656E2920E5200042CB5B /* LaunchScreen.storyboard in Resources */,
+				05C91A01292B463600D14A0F /* PBTransactions.json in Resources */,
 				05AC656B2920E5200042CB5B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,8 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051778F0292B5F26008EE768 /* TransactionModel.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
+				051778F3292B5FCA008EE768 /* MockNetworkService.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
+				051778F5292B5FDE008EE768 /* NetworkService.swift in Sources */,
 				05AC65642920E51F0042CB5B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,7 +483,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2RJFX5PSNK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WorldOfPAYBACK/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = WorldOfPAYBACK/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -470,7 +510,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2RJFX5PSNK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WorldOfPAYBACK/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = WorldOfPAYBACK/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

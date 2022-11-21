@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  WorldOfPAYBACK
 //
-//  Created by Hamed on 11/13/22.
+//  Created by Hamed Moosaei on 11/13/22.
 //
 
 import UIKit
