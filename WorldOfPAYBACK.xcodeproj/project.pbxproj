@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		051778F0292B5F26008EE768 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionModel.swift */; };
-		051778F3292B5FCA008EE768 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockNetworkService.swift */; };
-		051778F5292B5FDE008EE768 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* NetworkService.swift */; };
+		051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockRequest.swift */; };
+		051778F5292B5FDE008EE768 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* Request.swift */; };
 		051778F8292B8B47008EE768 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F7292B8B47008EE768 /* RxCocoa */; };
 		051778FA292B8B47008EE768 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F9292B8B47008EE768 /* RxSwift */; };
+		051778FC292BA05B008EE768 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoints.swift */; };
+		052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B5CD9292CF65F00ED8EBD /* NetworkService.swift */; };
 		05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65612920E51F0042CB5B /* AppDelegate.swift */; };
 		05AC65642920E51F0042CB5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65632920E51F0042CB5B /* SceneDelegate.swift */; };
 		05AC656B2920E5200042CB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656A2920E5200042CB5B /* Assets.xcassets */; };
@@ -42,8 +44,10 @@
 
 /* Begin PBXFileReference section */
 		051778EF292B5F26008EE768 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
-		051778F2292B5FCA008EE768 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
-		051778F4292B5FDE008EE768 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		051778F2292B5FCA008EE768 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
+		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		051778FB292BA05B008EE768 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		052B5CD9292CF65F00ED8EBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		05AC655E2920E51F0042CB5B /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65612920E51F0042CB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AC65632920E51F0042CB5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 		051778F1292B5FA4008EE768 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				051778F2292B5FCA008EE768 /* MockNetworkService.swift */,
-				051778F4292B5FDE008EE768 /* NetworkService.swift */,
+				051778F2292B5FCA008EE768 /* MockRequest.swift */,
+				051778F4292B5FDE008EE768 /* Request.swift */,
+				051778FB292BA05B008EE768 /* EndPoints.swift */,
+				052B5CD9292CF65F00ED8EBD /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -320,9 +326,11 @@
 			files = (
 				051778F0292B5F26008EE768 /* TransactionModel.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
-				051778F3292B5FCA008EE768 /* MockNetworkService.swift in Sources */,
+				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
+				051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */,
+				051778FC292BA05B008EE768 /* EndPoints.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
-				051778F5292B5FDE008EE768 /* NetworkService.swift in Sources */,
+				051778F5292B5FDE008EE768 /* Request.swift in Sources */,
 				05AC65642920E51F0042CB5B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

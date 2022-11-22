@@ -8,12 +8,12 @@
 import Foundation
 
 // MARK: - Welcome
-struct TransactionList: Codable {
+struct TransactionList: Decodable {
     let items: [Transaction]
 }
 
 // MARK: - Item
-struct Transaction: Codable {
+struct Transaction: Decodable {
     let partnerDisplayName: String
     let alias: Alias
     let category: Int
@@ -21,12 +21,12 @@ struct Transaction: Codable {
 }
 
 // MARK: - Alias
-struct Alias: Codable {
+struct Alias: Decodable {
     let reference: String
 }
 
 // MARK: - TransactionDetail
-struct TransactionDetail: Codable {
+struct TransactionDetail: Decodable {
     let transactionDetailDescription: Description?
     let bookingDate: Date
     let value: Value
@@ -37,16 +37,16 @@ struct TransactionDetail: Codable {
     }
 }
 
-enum Description: String, Codable {
+enum Description: String, Decodable {
     case punkteSammeln = "Punkte sammeln"
 }
 
 // MARK: - Value
-struct Value: Codable {
+struct Value: Decodable {
     let amount: Int
     let currency: Currency
 }
 
-enum Currency: String, Codable {
+enum Currency: String, Decodable {
     case pbp = "PBP"
 }
