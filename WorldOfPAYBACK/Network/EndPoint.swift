@@ -1,5 +1,5 @@
 //
-//  EndPoints.swift
+//  EndPoint.swift
 //  WorldOfPAYBACK
 //
 //  Created by Hamed Moosaei on 11/21/22.
@@ -10,12 +10,12 @@ import Foundation
 enum EndPoint {
     case transactionList
     
-    var modelType: Decodable.Type {
-        switch self {
-        case .transactionList:
-            return TransactionList.self
-        }
-    }
+//    var modelType: Decodable.Type {
+//        switch self {
+//        case .transactionList:
+//            return TransactionDecodableModel.self
+//        }
+//    }
     
     var url: URL {
         switch self {

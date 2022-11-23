@@ -1,5 +1,5 @@
 //
-//  TransactionModel.swift
+//  TransactionDecodableModel.swift
 //  WorldOfPAYBACK
 //
 //  Created by Hamed Moosaei on 11/21/22.
@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct TransactionList: Decodable {
+struct TransactionDecodableModel: Decodable {
     let items: [Transaction]
 }
 

@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051778F0292B5F26008EE768 /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionListModel.swift */; };
+		051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */; };
 		051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockRequest.swift */; };
 		051778F5292B5FDE008EE768 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* Request.swift */; };
 		051778F8292B8B47008EE768 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F7292B8B47008EE768 /* RxCocoa */; };
 		051778FA292B8B47008EE768 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F9292B8B47008EE768 /* RxSwift */; };
-		051778FC292BA05B008EE768 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoints.swift */; };
+		051778FC292BA05B008EE768 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoint.swift */; };
 		052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B5CD9292CF65F00ED8EBD /* NetworkService.swift */; };
 		058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D3292E0122006308DD /* NetworkMonitor.swift */; };
+		058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D9292E23E6006308DD /* TransactionListViewModel.swift */; };
+		058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905DB292E23F7006308DD /* TransactionListViewController.swift */; };
+		058905E0292E25BD006308DD /* TransactionListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905DF292E25BD006308DD /* TransactionListCellView.swift */; };
+		058905E2292E25E2006308DD /* TransactionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905E1292E25E2006308DD /* TransactionListModel.swift */; };
 		05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65612920E51F0042CB5B /* AppDelegate.swift */; };
 		05AC656B2920E5200042CB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656A2920E5200042CB5B /* Assets.xcassets */; };
 		05AC656E2920E5200042CB5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656C2920E5200042CB5B /* LaunchScreen.storyboard */; };
@@ -43,12 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		051778EF292B5F26008EE768 /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
+		051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDecodableModel.swift; sourceTree = "<group>"; };
 		051778F2292B5FCA008EE768 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		051778FB292BA05B008EE768 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		051778FB292BA05B008EE768 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		052B5CD9292CF65F00ED8EBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		058905D3292E0122006308DD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		058905D9292E23E6006308DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		058905DB292E23F7006308DD /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
+		058905DF292E25BD006308DD /* TransactionListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListCellView.swift; sourceTree = "<group>"; };
+		058905E1292E25E2006308DD /* TransactionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModel.swift; sourceTree = "<group>"; };
 		05AC655E2920E51F0042CB5B /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65612920E51F0042CB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AC656A2920E5200042CB5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +101,7 @@
 		051778EE292B5E7D008EE768 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				051778EF292B5F26008EE768 /* TransactionListModel.swift */,
+				051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,7 +111,7 @@
 			children = (
 				051778F2292B5FCA008EE768 /* MockRequest.swift */,
 				051778F4292B5FDE008EE768 /* Request.swift */,
-				051778FB292BA05B008EE768 /* EndPoints.swift */,
+				051778FB292BA05B008EE768 /* EndPoint.swift */,
 				052B5CD9292CF65F00ED8EBD /* NetworkService.swift */,
 				058905D3292E0122006308DD /* NetworkMonitor.swift */,
 			);
@@ -122,6 +130,9 @@
 		058905D7292E156E006308DD /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				058905DE292E257F006308DD /* View */,
+				058905DD292E24A9006308DD /* ViewModel */,
+				058905E3292E598E006308DD /* Model */,
 			);
 			path = TransactionList;
 			sourceTree = "<group>";
@@ -131,6 +142,31 @@
 			children = (
 			);
 			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		058905DD292E24A9006308DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				058905D9292E23E6006308DD /* TransactionListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		058905DE292E257F006308DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				058905DB292E23F7006308DD /* TransactionListViewController.swift */,
+				058905DF292E25BD006308DD /* TransactionListCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		058905E3292E598E006308DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				058905E1292E25E2006308DD /* TransactionListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		05AC65552920E51F0042CB5B = {
@@ -348,14 +384,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				051778F0292B5F26008EE768 /* TransactionListModel.swift in Sources */,
+				051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */,
+				058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
 				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
 				051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */,
-				051778FC292BA05B008EE768 /* EndPoints.swift in Sources */,
+				058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */,
+				051778FC292BA05B008EE768 /* EndPoint.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
 				051778F5292B5FDE008EE768 /* Request.swift in Sources */,
 				058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */,
+				058905E0292E25BD006308DD /* TransactionListCellView.swift in Sources */,
+				058905E2292E25E2006308DD /* TransactionListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,8 +15,10 @@ class AppCoordinator {
     }
     
     func start() {
-        let vc = UITabBarController()
-        window.rootViewController = vc
+        let vm = TransactionListViewModel()
+        let vc = TransactionListViewController(viewModel: vm)
+        let nav = UINavigationController(rootViewController: vc)
+        window.rootViewController = nav
         window.makeKeyAndVisible()
     }
 }
