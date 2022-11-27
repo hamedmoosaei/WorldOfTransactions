@@ -28,7 +28,7 @@ struct Alias: Decodable {
 // MARK: - TransactionDetail
 struct TransactionDetail: Decodable {
     let transactionDetailDescription: Description?
-    let bookingDate: Date
+    let bookingDate: String
     let value: Value
 
     enum CodingKeys: String, CodingKey {
