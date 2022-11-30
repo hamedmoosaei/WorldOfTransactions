@@ -10,6 +10,7 @@
 		0502B48B293765AB0091E21E /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48A293765AB0091E21E /* FilterListViewController.swift */; };
 		0502B48D293765BA0091E21E /* FilterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48C293765BA0091E21E /* FilterListViewModel.swift */; };
 		0502B4902937660C0091E21E /* FilterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48F2937660C0091E21E /* FilterListModel.swift */; };
+		0502B4922937682F0091E21E /* FilterListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B4912937682F0091E21E /* FilterListCellView.swift */; };
 		051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */; };
 		051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockRequest.swift */; };
 		051778F5292B5FDE008EE768 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* Request.swift */; };
@@ -55,6 +56,7 @@
 		0502B48A293765AB0091E21E /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
 		0502B48C293765BA0091E21E /* FilterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewModel.swift; sourceTree = "<group>"; };
 		0502B48F2937660C0091E21E /* FilterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListModel.swift; sourceTree = "<group>"; };
+		0502B4912937682F0091E21E /* FilterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListCellView.swift; sourceTree = "<group>"; };
 		051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDecodableModel.swift; sourceTree = "<group>"; };
 		051778F2292B5FCA008EE768 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0502B48A293765AB0091E21E /* FilterListViewController.swift */,
+				0502B4912937682F0091E21E /* FilterListCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				0502B48B293765AB0091E21E /* FilterListViewController.swift in Sources */,
 				058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
+				0502B4922937682F0091E21E /* FilterListCellView.swift in Sources */,
 				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
 				051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */,
 				058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */,
