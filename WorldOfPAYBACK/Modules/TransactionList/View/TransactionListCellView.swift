@@ -10,22 +10,15 @@ import UIKit
 
 class TransactionListCellView: UITableViewCell {
     
-    var model: TransactionListItemModel? {
-        didSet {
-            injectDataToView()
-        }
-    }
-    
-    private lazy var partnerNamelabel: UILabel = createLabel(font: .boldSystemFont(ofSize: 16))
-    private lazy var descriptionlabel: UILabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray)
-    private lazy var valuelabel: UILabel = createLabel(font: .systemFont(ofSize: 16))
-    private lazy var datelabel: UILabel = createLabel(font: .systemFont(ofSize: 12), textColor: .darkGray)
+    lazy var partnerNamelabel: UILabel = createLabel(font: .boldSystemFont(ofSize: 16))
+    lazy var descriptionlabel: UILabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray)
+    lazy var valuelabel: UILabel = createLabel(font: .systemFont(ofSize: 16))
+    lazy var datelabel: UILabel = createLabel(font: .systemFont(ofSize: 12), textColor: .darkGray)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
-        constraintViews()
-        injectDataToView()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -39,7 +32,7 @@ class TransactionListCellView: UITableViewCell {
         contentView.addSubview(datelabel)
     }
     
-    private func constraintViews() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             partnerNamelabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
             partnerNamelabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
@@ -55,13 +48,6 @@ class TransactionListCellView: UITableViewCell {
             datelabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12),
             datelabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
         ])
-    }
-    
-    private func injectDataToView() {
-        partnerNamelabel.text = model?.partnerDisplayName
-        descriptionlabel.text = model?.transactionDetailDescription
-        valuelabel.text = String(describing: model?.valueAmount ?? 0) + " " + (model?.valueCurrency ?? "")
-        datelabel.text = model?.bookingDate.description
     }
     
     private func createLabel(font: UIFont = .systemFont(ofSize: 17), textColor: UIColor? = nil) -> UILabel {
