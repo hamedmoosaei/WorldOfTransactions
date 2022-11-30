@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0502B48B293765AB0091E21E /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48A293765AB0091E21E /* FilterListViewController.swift */; };
+		0502B48D293765BA0091E21E /* FilterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48C293765BA0091E21E /* FilterListViewModel.swift */; };
+		0502B4902937660C0091E21E /* FilterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48F2937660C0091E21E /* FilterListModel.swift */; };
 		051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */; };
 		051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockRequest.swift */; };
 		051778F5292B5FDE008EE768 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* Request.swift */; };
@@ -15,6 +18,7 @@
 		051778FC292BA05B008EE768 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoint.swift */; };
 		052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B5CD9292CF65F00ED8EBD /* NetworkService.swift */; };
 		056E8E4729332C1700A4BF14 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E4629332C1700A4BF14 /* DateConverter.swift */; };
+		056E8E5429339DD200A4BF14 /* TotalAmoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */; };
 		058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D3292E0122006308DD /* NetworkMonitor.swift */; };
 		058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D9292E23E6006308DD /* TransactionListViewModel.swift */; };
 		058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905DB292E23F7006308DD /* TransactionListViewController.swift */; };
@@ -48,12 +52,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0502B48A293765AB0091E21E /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
+		0502B48C293765BA0091E21E /* FilterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewModel.swift; sourceTree = "<group>"; };
+		0502B48F2937660C0091E21E /* FilterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListModel.swift; sourceTree = "<group>"; };
 		051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDecodableModel.swift; sourceTree = "<group>"; };
 		051778F2292B5FCA008EE768 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		051778FB292BA05B008EE768 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		052B5CD9292CF65F00ED8EBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		056E8E4629332C1700A4BF14 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
+		056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmoutView.swift; sourceTree = "<group>"; };
 		058905D3292E0122006308DD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		058905D9292E23E6006308DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		058905DB292E23F7006308DD /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +108,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0502B487293764E10091E21E /* FilterList */ = {
+			isa = PBXGroup;
+			children = (
+				0502B488293764F60091E21E /* View */,
+				0502B489293764FF0091E21E /* ViewModel */,
+				0502B48E293765DB0091E21E /* Model */,
+			);
+			path = FilterList;
+			sourceTree = "<group>";
+		};
+		0502B488293764F60091E21E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0502B48A293765AB0091E21E /* FilterListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0502B489293764FF0091E21E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0502B48C293765BA0091E21E /* FilterListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0502B48E293765DB0091E21E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0502B48F2937660C0091E21E /* FilterListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		051778EE292B5E7D008EE768 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +174,7 @@
 		058905D6292E1560006308DD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0502B487293764E10091E21E /* FilterList */,
 				058905D7292E156E006308DD /* TransactionList */,
 				058905D8292E231E006308DD /* TransactionDetail */,
 			);
@@ -168,6 +211,7 @@
 			children = (
 				058905DB292E23F7006308DD /* TransactionListViewController.swift */,
 				058905DF292E25BD006308DD /* TransactionListCellView.swift */,
+				056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,8 +439,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0502B4902937660C0091E21E /* FilterListModel.swift in Sources */,
+				056E8E5429339DD200A4BF14 /* TotalAmoutView.swift in Sources */,
 				051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */,
+				0502B48D293765BA0091E21E /* FilterListViewModel.swift in Sources */,
 				056E8E4729332C1700A4BF14 /* DateConverter.swift in Sources */,
+				0502B48B293765AB0091E21E /* FilterListViewController.swift in Sources */,
 				058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
 				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
