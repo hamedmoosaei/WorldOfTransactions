@@ -13,4 +13,5 @@ struct TransactionListItemModel {
     var transactionDetailDescription: String?
     var valueAmount: Int
     var valueCurrency: String?
+    var category: Int
 }

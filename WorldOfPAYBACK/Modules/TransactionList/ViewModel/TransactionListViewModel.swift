@@ -10,28 +10,53 @@ import RxSwift
 import RxCocoa
 
 class TransactionListViewModel {
-    var model: BehaviorRelay<[TransactionItemViewModel]> = BehaviorRelay(value: [])
+    
+    var transactionModel: BehaviorRelay<[TransactionItemViewModel]> = BehaviorRelay(value: [])
     var isLoading: PublishSubject<Bool> = PublishSubject()
     var totalText: PublishSubject<String> = PublishSubject()
-//    var itemsToShow: [TransactionItemViewModel] = []
+    
+    private var modelBackUp: [TransactionItemViewModel] = []
+    private var filterModel: FilterListModel = FilterListModel(title: "", items: [])
     private var disposeBag = DisposeBag()
     
     func fetchTransactions() {
         let request: MockRequest<TransactionDecodableModel> = MockRequest(endPoint: .transactionList)
         isLoading.onNext(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            request.perform()
-                .subscribe(onNext: { transactions in
-                    let model = transactions.items.map(TransactionItemViewModel.init)
-                    self.model.accept(model)
-                    self.generateTotalText(items: model)
-                    self.isLoading.onNext(false)
-                }).disposed(by: self.disposeBag)
-        })
+        request.perform().subscribe(onNext: saveNewTransactionModel).disposed(by: disposeBag)
+    }
+    
+    func createFilterViewModel() -> FilterListViewModel {
+        let viewModel = FilterListViewModel(model: filterModel)
+        viewModel.filteredList.subscribe(onNext: filterList).disposed(by: disposeBag)
+        return viewModel
+    }
+    
+    private func saveNewTransactionModel(decodableModel: TransactionDecodableModel) {
+        let model = decodableModel.items.map(TransactionItemViewModel.init)
+        transactionModel.accept(model)
+        modelBackUp = model
+        generateTotalText(items: model)
+        generateFilterModel(model: model)
+        isLoading.onNext(false)
+    }
+    
+    private func filterList(newFilterModel: FilterListModel) {
+        filterModel = newFilterModel
+        let selectedItems = filterModel.items.filter({$0.isSelected})
+        let selectedCategories = selectedItems.compactMap({Int($0.title)})
+        let newModelToShow = modelBackUp.filter({selectedCategories.contains($0.transaction.category)})
+        transactionModel.accept(newModelToShow)
+        generateTotalText(items: newModelToShow)
+    }
+    
+    private func generateFilterModel(model: [TransactionItemViewModel]) {
+        let mapedModel = Array(Set(model.map({$0.transaction.category}))).sorted(by: <)
+        filterModel = FilterListModel(title: "Category", items: mapedModel.map({(String(describing: $0),true)}))
     }
     
     private func generateTotalText(items: [TransactionItemViewModel]) {
-        self.totalText.onNext(String(describing: calculateTotal(items: items)) + " " + (items[0].transaction.valueCurrency ?? ""))
+        let currency = !items.isEmpty ? items[0].transaction.valueCurrency ?? "" : ""
+        self.totalText.onNext(String(describing: calculateTotal(items: items)) + " " + currency)
     }
     
     private func calculateTotal(items: [TransactionItemViewModel]) -> Int {
@@ -52,7 +77,8 @@ extension TransactionItemViewModel {
             partnerDisplayName: transaction.partnerDisplayName,
             transactionDetailDescription: transaction.transactionDetail.transactionDetailDescription?.rawValue,
             valueAmount: transaction.transactionDetail.value.amount,
-            valueCurrency: transaction.transactionDetail.value.currency.rawValue
+            valueCurrency: transaction.transactionDetail.value.currency.rawValue,
+            category: transaction.category
         )
     }
 }

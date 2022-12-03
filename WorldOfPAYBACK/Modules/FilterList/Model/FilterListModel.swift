@@ -9,5 +9,5 @@ import Foundation
 
 struct FilterListModel {
     let title: String
-    let items: [String: Bool]
+    var items: [(title: String, isSelected: Bool)]
 }

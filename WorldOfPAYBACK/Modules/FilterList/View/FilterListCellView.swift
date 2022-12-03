@@ -10,7 +10,7 @@ import UIKit
 
 class FilterListViewCell: UITableViewCell {
     
-    var name: UILabel = {
+    var nameLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -29,10 +29,14 @@ class FilterListViewCell: UITableViewCell {
     }
     
     private func addViews() {
-        
+        contentView.addSubview(nameLabel)
     }
     
     private func setupConstraints() {
-        
+        NSLayoutConstraint.activate([
+            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            nameLabel.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.15)
+        ])
     }
 }

@@ -29,6 +29,19 @@ class TransactionListViewController: UIViewController {
         return view
     }()
     
+    private lazy var filterButton: UIBarButtonItem = {
+        let image = UIImage(named: "FilterIcon")?.withRenderingMode(.alwaysOriginal)
+        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(filterButtonTapped))
+        return button
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
+    
     private lazy var totalView = TotalAmountView()
     
     init(viewModel: TransactionListViewModel) {
@@ -72,6 +85,8 @@ class TransactionListViewController: UIViewController {
         view.addSubview(tableView)
         view.addSubview(totalView)
         view.addSubview(activityIndicator)
+        tableView.addSubview(refreshControl)
+        navigationItem.rightBarButtonItem = filterButton
     }
     
     private func setupConstraints() {
@@ -90,12 +105,23 @@ class TransactionListViewController: UIViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
+    
+    @objc private func filterButtonTapped() {
+        let filterViewModel = viewModel.createFilterViewModel()
+        let filterViewController = FilterListViewController(viewModel: filterViewModel)
+        present(filterViewController, animated: true)
+    }
+    
+    @objc private func refresh() {
+        viewModel.fetchTransactions()
+        refreshControl.endRefreshing()
+    }
 }
 
 extension TransactionListViewController: UITableViewDelegate {
     
     func bindTableViewDataSource() {
-        viewModel.model
+        viewModel.transactionModel
             .bind(to: tableView.rx.items(cellIdentifier: "TransactionListCellView", cellType: TransactionListCellView.self)) { (row, model, cell) in
                 model.partnerDisplayName
                     .asDriver(onErrorJustReturn: "")
