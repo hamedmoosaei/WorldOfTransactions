@@ -145,4 +145,11 @@ extension TransactionListViewController: UITableViewDelegate {
             }
             .disposed(by: disposeBag)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedDetailViewModel = viewModel.createDetailViewModel(indexPath: indexPath)
+        let selectedDetailViewController = transactionDetailViewController(viewModel: selectedDetailViewModel)
+        navigationController?.pushViewController(selectedDetailViewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }

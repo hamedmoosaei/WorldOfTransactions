@@ -31,6 +31,14 @@ class TransactionListViewModel {
         return viewModel
     }
     
+    func createDetailViewModel(indexPath: IndexPath) -> TransactionDetailViewModel {
+        let selectedModel = transactionModel.value[indexPath.row]
+        let detailModel = TransactionDetailModel(partnerDisplayName: selectedModel.transaction.partnerDisplayName,
+                                                 transactionDetailDescription: selectedModel.transaction.transactionDetailDescription)
+        let detailViewModel = TransactionDetailViewModel(transactionDetailModel: detailModel)
+        return detailViewModel
+    }
+    
     private func saveNewTransactionModel(decodableModel: TransactionDecodableModel) {
         let model = decodableModel.items.map(TransactionItemViewModel.init)
         transactionModel.accept(model)
