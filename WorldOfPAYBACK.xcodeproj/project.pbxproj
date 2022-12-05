@@ -18,6 +18,9 @@
 		051778FA292B8B47008EE768 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F9292B8B47008EE768 /* RxSwift */; };
 		051778FC292BA05B008EE768 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoint.swift */; };
 		052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B5CD9292CF65F00ED8EBD /* NetworkService.swift */; };
+		055C32EA293C60D4001FFB36 /* TransactionDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */; };
+		055C32EC293CAB2F001FFB36 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */; };
+		055C32EE293CABC1001FFB36 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */; };
 		056E8E4729332C1700A4BF14 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E4629332C1700A4BF14 /* DateConverter.swift */; };
 		056E8E5429339DD200A4BF14 /* TotalAmoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */; };
 		058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D3292E0122006308DD /* NetworkMonitor.swift */; };
@@ -62,6 +65,9 @@
 		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		051778FB292BA05B008EE768 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		052B5CD9292CF65F00ED8EBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailModel.swift; sourceTree = "<group>"; };
+		055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
+		055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		056E8E4629332C1700A4BF14 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmoutView.swift; sourceTree = "<group>"; };
 		058905D3292E0122006308DD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
@@ -166,6 +172,30 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		055C32E6293C60B2001FFB36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		055C32E7293C60BA001FFB36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		055C32E8293C60C1001FFB36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		056E8E4529332BD600A4BF14 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +227,9 @@
 		058905D8292E231E006308DD /* TransactionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				055C32E8293C60C1001FFB36 /* View */,
+				055C32E7293C60BA001FFB36 /* ViewModel */,
+				055C32E6293C60B2001FFB36 /* Model */,
 			);
 			path = TransactionDetail;
 			sourceTree = "<group>";
@@ -454,11 +487,14 @@
 				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
 				051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */,
 				058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */,
+				055C32EC293CAB2F001FFB36 /* TransactionDetailViewModel.swift in Sources */,
 				051778FC292BA05B008EE768 /* EndPoint.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
 				051778F5292B5FDE008EE768 /* Request.swift in Sources */,
 				058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */,
 				058905E0292E25BD006308DD /* TransactionListCellView.swift in Sources */,
+				055C32EA293C60D4001FFB36 /* TransactionDetailModel.swift in Sources */,
+				055C32EE293CABC1001FFB36 /* TransactionDetailViewController.swift in Sources */,
 				058905E2292E25E2006308DD /* TransactionListItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
