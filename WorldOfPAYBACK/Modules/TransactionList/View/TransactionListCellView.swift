@@ -7,22 +7,52 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class TransactionListCellView: UITableViewCell {
     
-    lazy var partnerNamelabel: UILabel = createLabel(font: .boldSystemFont(ofSize: 16))
-    lazy var descriptionlabel: UILabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray)
-    lazy var valuelabel: UILabel = createLabel(font: .systemFont(ofSize: 16))
-    lazy var datelabel: UILabel = createLabel(font: .systemFont(ofSize: 12), textColor: .darkGray)
+    let transactionModel: PublishSubject<TransactionItemViewModel> = PublishSubject()
+    
+    private let disposeBag = DisposeBag()
+    
+    private lazy var partnerNamelabel: UILabel = createLabel(font: .boldSystemFont(ofSize: 16))
+    private lazy var descriptionlabel: UILabel = createLabel(font: .systemFont(ofSize: 14), textColor: .darkGray)
+    private lazy var valuelabel: UILabel = createLabel(font: .systemFont(ofSize: 16))
+    private lazy var datelabel: UILabel = createLabel(font: .systemFont(ofSize: 12), textColor: .darkGray)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         setupConstraints()
+        setupBinding()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupBinding() {
+        transactionModel.subscribe(onNext: { model in
+            model.partnerDisplayName
+                .asDriver(onErrorJustReturn: "")
+                .drive(self.partnerNamelabel.rx.text)
+                .disposed(by: self.disposeBag)
+            
+            model.description
+                .asDriver(onErrorJustReturn: "")
+                .drive(self.descriptionlabel.rx.text)
+                .disposed(by: self.disposeBag)
+            
+            model.valueAndCurrency
+                .asDriver(onErrorJustReturn: "")
+                .drive(self.valuelabel.rx.text)
+                .disposed(by: self.disposeBag)
+            
+            model.bookingDate
+                .asDriver(onErrorJustReturn: "")
+                .drive(self.datelabel.rx.text)
+                .disposed(by: self.disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     private func addViews() {

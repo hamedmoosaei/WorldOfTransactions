@@ -123,27 +123,8 @@ extension TransactionListViewController: UITableViewDelegate {
     func bindTableViewDataSource() {
         viewModel.transactionModel
             .bind(to: tableView.rx.items(cellIdentifier: "TransactionListCellView", cellType: TransactionListCellView.self)) { (row, model, cell) in
-                model.partnerDisplayName
-                    .asDriver(onErrorJustReturn: "")
-                    .drive(cell.partnerNamelabel.rx.text)
-                    .disposed(by: self.disposeBag)
-                
-                model.description
-                    .asDriver(onErrorJustReturn: "")
-                    .drive(cell.descriptionlabel.rx.text)
-                    .disposed(by: self.disposeBag)
-                
-                model.valueAndCurrency
-                    .asDriver(onErrorJustReturn: "")
-                    .drive(cell.valuelabel.rx.text)
-                    .disposed(by: self.disposeBag)
-                
-                model.bookingDate
-                    .asDriver(onErrorJustReturn: "")
-                    .drive(cell.datelabel.rx.text)
-                    .disposed(by: self.disposeBag)
-            }
-            .disposed(by: disposeBag)
+                cell.transactionModel.onNext(model)
+            }.disposed(by: disposeBag)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
