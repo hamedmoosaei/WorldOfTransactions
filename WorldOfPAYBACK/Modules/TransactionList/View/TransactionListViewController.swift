@@ -64,7 +64,8 @@ class TransactionListViewController: UIViewController {
     }
     
     private func setupBinding() {
-        viewModel.totalText
+        viewModel.transactionModel
+            .map(viewModel.calculateTotalText)
             .asDriver(onErrorJustReturn: "")
             .drive(self.totalView.valueLabel.rx.text)
             .disposed(by: disposeBag)

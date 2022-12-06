@@ -27,7 +27,7 @@ class TransactionListViewModel {
     
     func createFilterViewModel() -> FilterListViewModel {
         let viewModel = FilterListViewModel(model: filterModel)
-        viewModel.filteredList.subscribe(onNext: filterList).disposed(by: disposeBag)
+        viewModel.filteredList.subscribe(onNext: filterTransactionList).disposed(by: disposeBag)
         return viewModel
     }
     
@@ -39,22 +39,25 @@ class TransactionListViewModel {
         return detailViewModel
     }
     
+    func calculateTotalText(items: [TransactionItemViewModel]) -> String {
+        let currency = !items.isEmpty ? items[0].transaction.valueCurrency ?? "" : ""
+        let text = String(describing: calculateTotalValue(items: items)) + " " + currency
+        return text
+    }
+    
     private func saveNewTransactionModel(decodableModel: TransactionDecodableModel) {
-        let model = decodableModel.items.map(TransactionItemViewModel.init)
+        let model = decodableModel.items.map(TransactionItemViewModel.init).sorted(by: >)
         transactionModel.accept(model)
         modelBackUp = model
-        generateTotalText(items: model)
         generateFilterModel(model: model)
         isLoading.onNext(false)
     }
     
-    private func filterList(newFilterModel: FilterListModel) {
+    private func filterTransactionList(newFilterModel: FilterListModel) {
         filterModel = newFilterModel
-        let selectedItems = filterModel.items.filter({$0.isSelected})
-        let selectedCategories = selectedItems.compactMap({Int($0.title)})
-        let newModelToShow = modelBackUp.filter({selectedCategories.contains($0.transaction.category)})
+        let selectedItems = filterModel.items.filter({$0.isSelected}).compactMap({Int($0.title)})
+        let newModelToShow = modelBackUp.filter({selectedItems.contains($0.transaction.category)})
         transactionModel.accept(newModelToShow)
-        generateTotalText(items: newModelToShow)
     }
     
     private func generateFilterModel(model: [TransactionItemViewModel]) {
@@ -62,12 +65,7 @@ class TransactionListViewModel {
         filterModel = FilterListModel(title: "Category", items: mapedModel.map({(String(describing: $0),true)}))
     }
     
-    private func generateTotalText(items: [TransactionItemViewModel]) {
-        let currency = !items.isEmpty ? items[0].transaction.valueCurrency ?? "" : ""
-        self.totalText.onNext(String(describing: calculateTotal(items: items)) + " " + currency)
-    }
-    
-    private func calculateTotal(items: [TransactionItemViewModel]) -> Int {
+    private func calculateTotalValue(items: [TransactionItemViewModel]) -> Int {
         return items.reduce(0) { partialResult, transactionListItemModel in
             return partialResult + transactionListItemModel.transaction.valueAmount
         }
@@ -81,7 +79,7 @@ struct TransactionItemViewModel {
 extension TransactionItemViewModel {
     init(transaction: Transaction) {
         self.transaction = TransactionListItemModel(
-            bookingDate: DateConverter.dateConverter(str: transaction.transactionDetail.bookingDate),
+            bookingDate: transaction.transactionDetail.bookingDate.localizedDateFromISO,
             partnerDisplayName: transaction.partnerDisplayName,
             transactionDetailDescription: transaction.transactionDetail.transactionDetailDescription?.rawValue,
             valueAmount: transaction.transactionDetail.value.amount,
@@ -106,5 +104,11 @@ extension TransactionItemViewModel {
     
     var valueAndCurrency: Observable<String> {
         Observable.just(String(describing: transaction.valueAmount) + " " + (transaction.valueCurrency ?? ""))
+    }
+}
+
+extension TransactionItemViewModel {
+    static func >(lhs:TransactionItemViewModel, rhs: TransactionItemViewModel) -> Bool {
+        return lhs.transaction.bookingDate.date > rhs.transaction.bookingDate.date
     }
 }
