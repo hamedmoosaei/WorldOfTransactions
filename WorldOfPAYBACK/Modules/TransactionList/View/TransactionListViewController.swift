@@ -18,7 +18,6 @@ class TransactionListViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.register(TransactionListCellView.self, forCellReuseIdentifier: "TransactionListCellView")
         return tableView
     }()
@@ -31,14 +30,13 @@ class TransactionListViewController: UIViewController {
     
     private lazy var filterButton: UIBarButtonItem = {
         let image = UIImage(named: "FilterIcon")?.withRenderingMode(.alwaysOriginal)
-        let button = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(filterButtonTapped))
+        let button = UIBarButtonItem(image: image)
         return button
     }()
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         return refreshControl
     }()
     
@@ -61,19 +59,6 @@ class TransactionListViewController: UIViewController {
         setupBinding()
         bindTableViewDataSource()
         viewModel.fetchTransactions()
-    }
-    
-    private func setupBinding() {
-        viewModel.transactionModel
-            .map(viewModel.calculateTotalText)
-            .asDriver(onErrorJustReturn: "")
-            .drive(self.totalView.valueLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        viewModel.isLoading
-            .asDriver(onErrorJustReturn: false)
-            .drive(self.activityIndicator.rx.isAnimating)
-            .disposed(by: disposeBag)
     }
     
     private func configViewController() {
@@ -107,13 +92,40 @@ class TransactionListViewController: UIViewController {
         ])
     }
     
-    @objc private func filterButtonTapped() {
+    private func setupBinding() {
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        viewModel.transactionModel
+            .map(viewModel.calculateTotalText)
+            .asDriver(onErrorJustReturn: "")
+            .drive(totalView.valueLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.isLoading
+            .asDriver(onErrorJustReturn: false)
+            .drive(activityIndicator.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        filterButton.rx
+            .tap
+            .subscribe(onNext: filterButtonTapped)
+            .disposed(by: disposeBag)
+        
+        refreshControl.rx
+            .controlEvent(.valueChanged)
+            .subscribe(onNext: refresh)
+            .disposed(by: disposeBag)
+    }
+    
+    private func filterButtonTapped() {
         let filterViewModel = viewModel.createFilterViewModel()
         let filterViewController = FilterListViewController(viewModel: filterViewModel)
         present(filterViewController, animated: true)
     }
     
-    @objc private func refresh() {
+    private func refresh() {
         viewModel.fetchTransactions()
         refreshControl.endRefreshing()
     }
@@ -121,7 +133,7 @@ class TransactionListViewController: UIViewController {
 
 extension TransactionListViewController: UITableViewDelegate {
     
-    func bindTableViewDataSource() {
+    private func bindTableViewDataSource() {
         viewModel.transactionModel
             .bind(to: tableView.rx.items(cellIdentifier: "TransactionListCellView", cellType: TransactionListCellView.self)) { (row, model, cell) in
                 cell.transactionModel.onNext(model)

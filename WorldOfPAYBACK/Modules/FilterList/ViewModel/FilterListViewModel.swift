@@ -11,6 +11,10 @@ import RxSwift
 class FilterListViewModel {
     var filterModel: FilterListModel
     
+    var tableViewModel: Observable<[FilterItem]> {
+        return Observable.just(filterModel.items)
+    }
+    
     var filteredList: PublishSubject<FilterListModel> = PublishSubject()
     
     init(model: FilterListModel) {

@@ -11,7 +11,7 @@ import RxSwift
 
 class TransactionListCellView: UITableViewCell {
     
-    let transactionModel: PublishSubject<TransactionItemViewModel> = PublishSubject()
+    let transactionModel: PublishSubject<TransactionListItemModel> = PublishSubject()
     
     private let disposeBag = DisposeBag()
     
@@ -33,7 +33,7 @@ class TransactionListCellView: UITableViewCell {
     
     private func setupBinding() {
         transactionModel.subscribe(onNext: { model in
-            model.partnerDisplayName
+            model.displayName
                 .asDriver(onErrorJustReturn: "")
                 .drive(self.partnerNamelabel.rx.text)
                 .disposed(by: self.disposeBag)
@@ -48,7 +48,7 @@ class TransactionListCellView: UITableViewCell {
                 .drive(self.valuelabel.rx.text)
                 .disposed(by: self.disposeBag)
             
-            model.bookingDate
+            model.date
                 .asDriver(onErrorJustReturn: "")
                 .drive(self.datelabel.rx.text)
                 .disposed(by: self.disposeBag)

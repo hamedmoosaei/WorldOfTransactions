@@ -7,17 +7,17 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class FilterListViewController: UIViewController {
     
     private var viewModel: FilterListViewModel
+    private var disposeBag = DisposeBag()
         
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.register(FilterListViewCell.self, forCellReuseIdentifier: "FilterListViewCell")
         return tableView
     }()
@@ -43,7 +43,8 @@ class FilterListViewController: UIViewController {
         super.viewDidLoad()
         addViews()
         setupConstraints()
-        subscribeClicks()
+        setupBindings()
+        bindTableViewDataSource()
     }
     
     private func addViews() {
@@ -65,34 +66,34 @@ class FilterListViewController: UIViewController {
         ])
     }
     
-    private func subscribeClicks() {
-        applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
+    private func setupBindings() {
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        applyButton.rx
+            .tap
+            .subscribe(onNext: applyButtonTapped)
+            .disposed(by: disposeBag)
     }
     
-    @objc private func applyButtonTapped() {
+    private func applyButtonTapped() {
         viewModel.emitFilteredList()
         self.dismiss(animated: true)
     }
 }
 
-extension FilterListViewController: UITableViewDelegate, UITableViewDataSource {
+extension FilterListViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    private func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.filterModel.title
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.filterModel.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FilterListViewCell") as? FilterListViewCell else {
-            return UITableViewCell()
-        }
-        let item = viewModel.filterModel.items[indexPath.row]
-        cell.nameLabel.text = item.title
-        cell.accessoryType = item.isSelected ? .checkmark : .none
-        return cell
+    private func bindTableViewDataSource() {
+        viewModel.tableViewModel.bind(to: tableView.rx.items(cellIdentifier: "FilterListViewCell", cellType: FilterListViewCell.self)) { (row, model, cell) in
+            cell.nameLabel.text = model.title
+            cell.accessoryType = model.isSelected ? .checkmark : .none
+        }.disposed(by: disposeBag)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
