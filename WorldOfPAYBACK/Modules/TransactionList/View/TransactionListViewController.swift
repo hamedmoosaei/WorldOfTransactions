@@ -97,8 +97,7 @@ class TransactionListViewController: UIViewController {
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        viewModel.transactionModel
-            .map(viewModel.calculateTotalText)
+        viewModel.totalText
             .asDriver(onErrorJustReturn: "")
             .drive(totalView.valueLabel.rx.text)
             .disposed(by: disposeBag)

@@ -15,7 +15,11 @@ class AppCoordinator {
     }
     
     func start() {
-        let vm = TransactionListViewModel()
+        let netService = NetworkService(endPoint: TransactionEndPoint.transactionList)
+        let localDS = TransactionJsonReaderDataSource()
+        let remoteDS = TransactionURLSessionDataSource(networkService: netService)
+        let repo = TransactionListRepositoryImpl(remoteDataSource: remoteDS, localDataSource: localDS)
+        let vm = TransactionListViewModel(transactionRepository: repo)
         let vc = TransactionListViewController(viewModel: vm)
         let nav = UINavigationController(rootViewController: vc)
         window.rootViewController = nav

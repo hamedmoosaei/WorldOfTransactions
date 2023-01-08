@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Welcome
 struct TransactionDecodableModel: Decodable {
-    let items: [Transaction]
+    let items: [TransactionDecodable]
 }
 
-// MARK: - Item
-struct Transaction: Decodable {
+// MARK: - TransactionDecodable
+struct TransactionDecodable: Decodable {
     let partnerDisplayName: String
     let alias: Alias
     let category: Int

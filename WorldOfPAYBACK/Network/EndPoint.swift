@@ -7,33 +7,26 @@
 
 import Foundation
 
-enum EndPoint {
-    case transactionList
+protocol EndPoint {
+
+    var baseUrl: URL { get }
     
-//    var modelType: Decodable.Type {
-//        switch self {
-//        case .transactionList:
-//            return TransactionDecodableModel.self
-//        }
-//    }
+    var path: String { get }
     
-    var url: URL {
-        switch self {
-        case .transactionList:
-            return URL(string: "https://api.payback.com/transactions")!
-        }
-    }
-    var testUrl: URL {
-        switch self {
-        case .transactionList:
-            return URL(string: "https://api-test.payback.com/transactions")!
-        }
-    }
-    var mockUrl: URL {
-        switch self {
-        case .transactionList:
-            let path = Bundle.main.path(forResource: "PBTransactions", ofType: "json")!
-            return URL(fileURLWithPath: path)
-        }
-    }
+    var httpMethod: HTTPMethod { get }
+    
+    /*
+        We can define other varibales
+        like Header or Validation or
+        Task. Task can be used for
+        adding parameters to request.
+     */
+}
+
+enum HTTPMethod: String {
+    case get     = "GET"
+    case post    = "POST"
+    case put     = "PUT"
+    case patch   = "PATCH"
+    case delete  = "DELETE"
 }

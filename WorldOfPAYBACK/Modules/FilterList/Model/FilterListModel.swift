@@ -16,3 +16,10 @@ struct FilterItem {
     let title: String
     var isSelected: Bool
 }
+
+extension FilterItem {
+    init(value: Int) {
+        self.title = String(value)
+        self.isSelected = true
+    }
+}

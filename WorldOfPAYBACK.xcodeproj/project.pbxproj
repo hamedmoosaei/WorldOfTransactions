@@ -12,22 +12,22 @@
 		0502B4902937660C0091E21E /* FilterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B48F2937660C0091E21E /* FilterListModel.swift */; };
 		0502B4922937682F0091E21E /* FilterListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502B4912937682F0091E21E /* FilterListCellView.swift */; };
 		051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */; };
-		051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F2292B5FCA008EE768 /* MockRequest.swift */; };
-		051778F5292B5FDE008EE768 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778F4292B5FDE008EE768 /* Request.swift */; };
 		051778F8292B8B47008EE768 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F7292B8B47008EE768 /* RxCocoa */; };
 		051778FA292B8B47008EE768 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 051778F9292B8B47008EE768 /* RxSwift */; };
 		051778FC292BA05B008EE768 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051778FB292BA05B008EE768 /* EndPoint.swift */; };
 		052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B5CD9292CF65F00ED8EBD /* NetworkService.swift */; };
+		053563DB295C35BF00B1B998 /* TransactionListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053563DA295C35BF00B1B998 /* TransactionListItemModel.swift */; };
+		054A0E772952FFB600524971 /* TransactionListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054A0E762952FFB600524971 /* TransactionListRepository.swift */; };
 		055C32EA293C60D4001FFB36 /* TransactionDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */; };
 		055C32EC293CAB2F001FFB36 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */; };
 		055C32EE293CABC1001FFB36 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */; };
-		056E8E4729332C1700A4BF14 /* StringExtension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E4629332C1700A4BF14 /* StringExtension + Date.swift */; };
+		056E8E4729332C1700A4BF14 /* String+DateExtension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E4629332C1700A4BF14 /* String+DateExtension .swift */; };
 		056E8E5429339DD200A4BF14 /* TotalAmoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */; };
 		058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D3292E0122006308DD /* NetworkMonitor.swift */; };
 		058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905D9292E23E6006308DD /* TransactionListViewModel.swift */; };
 		058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905DB292E23F7006308DD /* TransactionListViewController.swift */; };
 		058905E0292E25BD006308DD /* TransactionListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905DF292E25BD006308DD /* TransactionListCellView.swift */; };
-		058905E2292E25E2006308DD /* TransactionListItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905E1292E25E2006308DD /* TransactionListItemModel.swift */; };
+		058905E2292E25E2006308DD /* TransactionBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058905E1292E25E2006308DD /* TransactionBusinessModel.swift */; };
 		05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65612920E51F0042CB5B /* AppDelegate.swift */; };
 		05AC656B2920E5200042CB5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656A2920E5200042CB5B /* Assets.xcassets */; };
 		05AC656E2920E5200042CB5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AC656C2920E5200042CB5B /* LaunchScreen.storyboard */; };
@@ -35,6 +35,9 @@
 		05AC65832920E5200042CB5B /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */; };
 		05AC65852920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */; };
 		05C91A01292B463600D14A0F /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C91A00292B463600D14A0F /* PBTransactions.json */; };
+		05F797202958251B00F617EF /* TransactionEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7971F2958251B00F617EF /* TransactionEndPoint.swift */; };
+		05F7972929587D1F00F617EF /* TransactionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */; };
+		05F7972B2958850A00F617EF /* TransactionLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */; };
 		E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BA19629281DD50054656C /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,20 +64,20 @@
 		0502B48F2937660C0091E21E /* FilterListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListModel.swift; sourceTree = "<group>"; };
 		0502B4912937682F0091E21E /* FilterListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListCellView.swift; sourceTree = "<group>"; };
 		051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDecodableModel.swift; sourceTree = "<group>"; };
-		051778F2292B5FCA008EE768 /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
-		051778F4292B5FDE008EE768 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		051778FB292BA05B008EE768 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		052B5CD9292CF65F00ED8EBD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		053563DA295C35BF00B1B998 /* TransactionListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListItemModel.swift; sourceTree = "<group>"; };
+		054A0E762952FFB600524971 /* TransactionListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRepository.swift; sourceTree = "<group>"; };
 		055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailModel.swift; sourceTree = "<group>"; };
 		055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
-		056E8E4629332C1700A4BF14 /* StringExtension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringExtension + Date.swift"; sourceTree = "<group>"; };
+		056E8E4629332C1700A4BF14 /* String+DateExtension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateExtension .swift"; sourceTree = "<group>"; };
 		056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalAmoutView.swift; sourceTree = "<group>"; };
 		058905D3292E0122006308DD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		058905D9292E23E6006308DD /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		058905DB292E23F7006308DD /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
 		058905DF292E25BD006308DD /* TransactionListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListCellView.swift; sourceTree = "<group>"; };
-		058905E1292E25E2006308DD /* TransactionListItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListItemModel.swift; sourceTree = "<group>"; };
+		058905E1292E25E2006308DD /* TransactionBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionBusinessModel.swift; sourceTree = "<group>"; };
 		05AC655E2920E51F0042CB5B /* WorldOfPAYBACK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldOfPAYBACK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65612920E51F0042CB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AC656A2920E5200042CB5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +89,9 @@
 		05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
 		05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		05C91A00292B463600D14A0F /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
+		05F7971F2958251B00F617EF /* TransactionEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndPoint.swift; sourceTree = "<group>"; };
+		05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteDataSource.swift; sourceTree = "<group>"; };
+		05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionLocalDataSource.swift; sourceTree = "<group>"; };
 		E89BA19629281DD50054656C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,25 +157,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		051778EE292B5E7D008EE768 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		051778F1292B5FA4008EE768 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				051778EE292B5E7D008EE768 /* Model */,
-				051778F2292B5FCA008EE768 /* MockRequest.swift */,
-				051778F4292B5FDE008EE768 /* Request.swift */,
-				051778FB292BA05B008EE768 /* EndPoint.swift */,
 				052B5CD9292CF65F00ED8EBD /* NetworkService.swift */,
+				051778FB292BA05B008EE768 /* EndPoint.swift */,
 				058905D3292E0122006308DD /* NetworkMonitor.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		053563D9295C339B00B1B998 /* DataClass */ = {
+			isa = PBXGroup;
+			children = (
+				058905E1292E25E2006308DD /* TransactionBusinessModel.swift */,
+				051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */,
+			);
+			path = DataClass;
+			sourceTree = "<group>";
+		};
+		054A0E752952FF5400524971 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				054A0E762952FFB600524971 /* TransactionListRepository.swift */,
+				05F7971F2958251B00F617EF /* TransactionEndPoint.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		055C32E6293C60B2001FFB36 /* Model */ = {
@@ -199,7 +212,7 @@
 		056E8E4529332BD600A4BF14 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				056E8E4629332C1700A4BF14 /* StringExtension + Date.swift */,
+				056E8E4629332C1700A4BF14 /* String+DateExtension .swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				058905D9292E23E6006308DD /* TransactionListViewModel.swift */,
+				053563DA295C35BF00B1B998 /* TransactionListItemModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,7 +269,9 @@
 		058905E3292E598E006308DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				058905E1292E25E2006308DD /* TransactionListItemModel.swift */,
+				053563D9295C339B00B1B998 /* DataClass */,
+				05F7972329587C8B00F617EF /* DataSource */,
+				054A0E752952FF5400524971 /* Repository */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +341,15 @@
 				E89BA19629281DD50054656C /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05F7972329587C8B00F617EF /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */,
+				05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		E89BA19529281DB10054656C /* Application */ = {
@@ -478,24 +503,27 @@
 				0502B4902937660C0091E21E /* FilterListModel.swift in Sources */,
 				056E8E5429339DD200A4BF14 /* TotalAmoutView.swift in Sources */,
 				051778F0292B5F26008EE768 /* TransactionDecodableModel.swift in Sources */,
+				053563DB295C35BF00B1B998 /* TransactionListItemModel.swift in Sources */,
+				05F797202958251B00F617EF /* TransactionEndPoint.swift in Sources */,
 				0502B48D293765BA0091E21E /* FilterListViewModel.swift in Sources */,
-				056E8E4729332C1700A4BF14 /* StringExtension + Date.swift in Sources */,
+				056E8E4729332C1700A4BF14 /* String+DateExtension .swift in Sources */,
 				0502B48B293765AB0091E21E /* FilterListViewController.swift in Sources */,
+				05F7972929587D1F00F617EF /* TransactionRemoteDataSource.swift in Sources */,
 				058905DC292E23F7006308DD /* TransactionListViewController.swift in Sources */,
 				E89BA19729281DD50054656C /* AppCoordinator.swift in Sources */,
 				0502B4922937682F0091E21E /* FilterListCellView.swift in Sources */,
 				052B5CDA292CF65F00ED8EBD /* NetworkService.swift in Sources */,
-				051778F3292B5FCA008EE768 /* MockRequest.swift in Sources */,
 				058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */,
 				055C32EC293CAB2F001FFB36 /* TransactionDetailViewModel.swift in Sources */,
 				051778FC292BA05B008EE768 /* EndPoint.swift in Sources */,
+				05F7972B2958850A00F617EF /* TransactionLocalDataSource.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
-				051778F5292B5FDE008EE768 /* Request.swift in Sources */,
 				058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */,
 				058905E0292E25BD006308DD /* TransactionListCellView.swift in Sources */,
 				055C32EA293C60D4001FFB36 /* TransactionDetailModel.swift in Sources */,
 				055C32EE293CABC1001FFB36 /* TransactionDetailViewController.swift in Sources */,
-				058905E2292E25E2006308DD /* TransactionListItemModel.swift in Sources */,
+				054A0E772952FFB600524971 /* TransactionListRepository.swift in Sources */,
+				058905E2292E25E2006308DD /* TransactionBusinessModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

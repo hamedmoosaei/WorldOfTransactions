@@ -33,25 +33,10 @@ class TransactionListCellView: UITableViewCell {
     
     private func setupBinding() {
         transactionModel.subscribe(onNext: { model in
-            model.displayName
-                .asDriver(onErrorJustReturn: "")
-                .drive(self.partnerNamelabel.rx.text)
-                .disposed(by: self.disposeBag)
-            
-            model.description
-                .asDriver(onErrorJustReturn: "")
-                .drive(self.descriptionlabel.rx.text)
-                .disposed(by: self.disposeBag)
-            
-            model.valueAndCurrency
-                .asDriver(onErrorJustReturn: "")
-                .drive(self.valuelabel.rx.text)
-                .disposed(by: self.disposeBag)
-            
-            model.date
-                .asDriver(onErrorJustReturn: "")
-                .drive(self.datelabel.rx.text)
-                .disposed(by: self.disposeBag)
+            self.partnerNamelabel.text = model.displayName
+            self.descriptionlabel.text = model.description
+            self.datelabel.text = model.date
+            self.valuelabel.text = model.valueAndCurrency
         }).disposed(by: disposeBag)
     }
     
