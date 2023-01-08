@@ -2,7 +2,7 @@
 
 # A perfect combination of MVVM + RxSwift
 
-World Of PayBack is a sample swift app that has a list of transactions with the ability to filter on the list
+World Of PayBack is a sample swift app that has a list of transactions with the ability to filter the list
 
 
 
