@@ -122,41 +122,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0502B487293764E10091E21E /* FilterList */ = {
-			isa = PBXGroup;
-			children = (
-				0502B488293764F60091E21E /* View */,
-				0502B489293764FF0091E21E /* ViewModel */,
-				0502B48E293765DB0091E21E /* Model */,
-			);
-			path = FilterList;
-			sourceTree = "<group>";
-		};
-		0502B488293764F60091E21E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0502B48A293765AB0091E21E /* FilterListViewController.swift */,
-				0502B4912937682F0091E21E /* FilterListCellView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0502B489293764FF0091E21E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0502B48C293765BA0091E21E /* FilterListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0502B48E293765DB0091E21E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0502B48F2937660C0091E21E /* FilterListModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		051778F1292B5FA4008EE768 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,48 +132,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		053563D9295C339B00B1B998 /* DataClass */ = {
-			isa = PBXGroup;
-			children = (
-				058905E1292E25E2006308DD /* TransactionBusinessModel.swift */,
-				051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */,
-			);
-			path = DataClass;
-			sourceTree = "<group>";
-		};
-		054A0E752952FF5400524971 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				054A0E762952FFB600524971 /* TransactionListRepository.swift */,
-				05F7971F2958251B00F617EF /* TransactionEndPoint.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		055C32E6293C60B2001FFB36 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		055C32E7293C60BA001FFB36 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		055C32E8293C60C1001FFB36 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		056E8E4529332BD600A4BF14 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,63 +140,124 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		058905D6292E1560006308DD /* Modules */ = {
+		057DF21F296AF672003A1690 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0502B487293764E10091E21E /* FilterList */,
-				058905D7292E156E006308DD /* TransactionList */,
-				058905D8292E231E006308DD /* TransactionDetail */,
+				057DF223296AF6B8003A1690 /* Repository */,
+				057DF222296AF6AC003A1690 /* DateSource */,
+				057DF221296AF69A003A1690 /* DataClass */,
 			);
-			path = Modules;
+			path = DataLayer;
 			sourceTree = "<group>";
 		};
-		058905D7292E156E006308DD /* TransactionList */ = {
+		057DF220296AF680003A1690 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				058905DE292E257F006308DD /* View */,
-				058905DD292E24A9006308DD /* ViewModel */,
-				058905E3292E598E006308DD /* Model */,
+				057DF226296AF7DA003A1690 /* View */,
+				057DF225296AF7CF003A1690 /* ViewModel */,
 			);
-			path = TransactionList;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		058905D8292E231E006308DD /* TransactionDetail */ = {
+		057DF221296AF69A003A1690 /* DataClass */ = {
 			isa = PBXGroup;
 			children = (
-				055C32E8293C60C1001FFB36 /* View */,
-				055C32E7293C60BA001FFB36 /* ViewModel */,
-				055C32E6293C60B2001FFB36 /* Model */,
+				058905E1292E25E2006308DD /* TransactionBusinessModel.swift */,
+				051778EF292B5F26008EE768 /* TransactionDecodableModel.swift */,
 			);
-			path = TransactionDetail;
+			path = DataClass;
 			sourceTree = "<group>";
 		};
-		058905DD292E24A9006308DD /* ViewModel */ = {
+		057DF222296AF6AC003A1690 /* DateSource */ = {
 			isa = PBXGroup;
 			children = (
-				058905D9292E23E6006308DD /* TransactionListViewModel.swift */,
-				053563DA295C35BF00B1B998 /* TransactionListItemModel.swift */,
+				05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */,
+				05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */,
+			);
+			path = DateSource;
+			sourceTree = "<group>";
+		};
+		057DF223296AF6B8003A1690 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				054A0E762952FFB600524971 /* TransactionListRepository.swift */,
+				05F7971F2958251B00F617EF /* TransactionEndPoint.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		057DF225296AF7CF003A1690 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				057DF22C296AF870003A1690 /* TransactionList */,
+				057DF22B296AF856003A1690 /* TransactionDetail */,
+				057DF22A296AF847003A1690 /* FilterList */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		058905DE292E257F006308DD /* View */ = {
+		057DF226296AF7DA003A1690 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				057DF229296AF81B003A1690 /* TransactionList */,
+				057DF228296AF800003A1690 /* TransactionDetail */,
+				057DF227296AF7EE003A1690 /* FilterList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		057DF227296AF7EE003A1690 /* FilterList */ = {
+			isa = PBXGroup;
+			children = (
+				0502B48A293765AB0091E21E /* FilterListViewController.swift */,
+				0502B4912937682F0091E21E /* FilterListCellView.swift */,
+			);
+			path = FilterList;
+			sourceTree = "<group>";
+		};
+		057DF228296AF800003A1690 /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				055C32ED293CABC1001FFB36 /* TransactionDetailViewController.swift */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		057DF229296AF81B003A1690 /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
 				058905DB292E23F7006308DD /* TransactionListViewController.swift */,
 				058905DF292E25BD006308DD /* TransactionListCellView.swift */,
 				056E8E5329339DD200A4BF14 /* TotalAmoutView.swift */,
 			);
-			path = View;
+			path = TransactionList;
 			sourceTree = "<group>";
 		};
-		058905E3292E598E006308DD /* Model */ = {
+		057DF22A296AF847003A1690 /* FilterList */ = {
 			isa = PBXGroup;
 			children = (
-				053563D9295C339B00B1B998 /* DataClass */,
-				05F7972329587C8B00F617EF /* DataSource */,
-				054A0E752952FF5400524971 /* Repository */,
+				0502B48C293765BA0091E21E /* FilterListViewModel.swift */,
+				0502B48F2937660C0091E21E /* FilterListModel.swift */,
 			);
-			path = Model;
+			path = FilterList;
+			sourceTree = "<group>";
+		};
+		057DF22B296AF856003A1690 /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				055C32EB293CAB2F001FFB36 /* TransactionDetailViewModel.swift */,
+				055C32E9293C60D4001FFB36 /* TransactionDetailModel.swift */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		057DF22C296AF870003A1690 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				058905D9292E23E6006308DD /* TransactionListViewModel.swift */,
+				053563DA295C35BF00B1B998 /* TransactionListItemModel.swift */,
+			);
+			path = TransactionList;
 			sourceTree = "<group>";
 		};
 		05AC65552920E51F0042CB5B = {
@@ -299,7 +283,8 @@
 		05AC65602920E51F0042CB5B /* WorldOfPAYBACK */ = {
 			isa = PBXGroup;
 			children = (
-				058905D6292E1560006308DD /* Modules */,
+				057DF220296AF680003A1690 /* PresentationLayer */,
+				057DF21F296AF672003A1690 /* DataLayer */,
 				051778F1292B5FA4008EE768 /* Network */,
 				05C91A02292B466400D14A0F /* Coordinator */,
 				E89BA19529281DB10054656C /* Application */,
@@ -341,15 +326,6 @@
 				E89BA19629281DD50054656C /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		05F7972329587C8B00F617EF /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */,
-				05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */,
-			);
-			path = DataSource;
 			sourceTree = "<group>";
 		};
 		E89BA19529281DB10054656C /* Application */ = {
