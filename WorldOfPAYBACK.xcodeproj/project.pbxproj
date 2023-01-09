@@ -34,6 +34,7 @@
 		05AC65792920E5200042CB5B /* WorldOfPAYBACKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65782920E5200042CB5B /* WorldOfPAYBACKTests.swift */; };
 		05AC65832920E5200042CB5B /* WorldOfPAYBACKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */; };
 		05AC65852920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */; };
+		05BD541A296BED04001E9AF6 /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD5419296BED04001E9AF6 /* JsonReader.swift */; };
 		05C91A01292B463600D14A0F /* PBTransactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C91A00292B463600D14A0F /* PBTransactions.json */; };
 		05F797202958251B00F617EF /* TransactionEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7971F2958251B00F617EF /* TransactionEndPoint.swift */; };
 		05F7972929587D1F00F617EF /* TransactionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */; };
@@ -88,6 +89,7 @@
 		05AC657E2920E5200042CB5B /* WorldOfPAYBACKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldOfPAYBACKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITests.swift; sourceTree = "<group>"; };
 		05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldOfPAYBACKUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05BD5419296BED04001E9AF6 /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		05C91A00292B463600D14A0F /* PBTransactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PBTransactions.json; sourceTree = "<group>"; };
 		05F7971F2958251B00F617EF /* TransactionEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndPoint.swift; sourceTree = "<group>"; };
 		05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -171,8 +173,8 @@
 		057DF222296AF6AC003A1690 /* DateSource */ = {
 			isa = PBXGroup;
 			children = (
-				05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */,
-				05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */,
+				05BD5417296BE71E001E9AF6 /* Local */,
+				05BD5416296BE70F001E9AF6 /* Remote */,
 			);
 			path = DateSource;
 			sourceTree = "<group>";
@@ -181,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				054A0E762952FFB600524971 /* TransactionListRepository.swift */,
-				05F7971F2958251B00F617EF /* TransactionEndPoint.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -286,6 +287,7 @@
 				057DF220296AF680003A1690 /* PresentationLayer */,
 				057DF21F296AF672003A1690 /* DataLayer */,
 				051778F1292B5FA4008EE768 /* Network */,
+				05BD5418296BECC7001E9AF6 /* FileReader */,
 				05C91A02292B466400D14A0F /* Coordinator */,
 				E89BA19529281DB10054656C /* Application */,
 				056E8E4529332BD600A4BF14 /* Extensions */,
@@ -309,6 +311,31 @@
 				05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */,
 			);
 			path = WorldOfPAYBACKUITests;
+			sourceTree = "<group>";
+		};
+		05BD5416296BE70F001E9AF6 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				05F7971F2958251B00F617EF /* TransactionEndPoint.swift */,
+				05F7972829587D1F00F617EF /* TransactionRemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		05BD5417296BE71E001E9AF6 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				05F7972A2958850A00F617EF /* TransactionLocalDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		05BD5418296BECC7001E9AF6 /* FileReader */ = {
+			isa = PBXGroup;
+			children = (
+				05BD5419296BED04001E9AF6 /* JsonReader.swift */,
+			);
+			path = FileReader;
 			sourceTree = "<group>";
 		};
 		05C919FF292B461800D14A0F /* Resources */ = {
@@ -492,6 +519,7 @@
 				058905DA292E23E6006308DD /* TransactionListViewModel.swift in Sources */,
 				055C32EC293CAB2F001FFB36 /* TransactionDetailViewModel.swift in Sources */,
 				051778FC292BA05B008EE768 /* EndPoint.swift in Sources */,
+				05BD541A296BED04001E9AF6 /* JsonReader.swift in Sources */,
 				05F7972B2958850A00F617EF /* TransactionLocalDataSource.swift in Sources */,
 				05AC65622920E51F0042CB5B /* AppDelegate.swift in Sources */,
 				058905D4292E0122006308DD /* NetworkMonitor.swift in Sources */,

@@ -22,7 +22,7 @@ struct TransactionURLSessionDataSource: TransactionRemoteDataSource {
     
     func provideTransactionData() -> Observable<TransactionDecodableModel> {
         
-        let response: Observable<TransactionDecodableModel> = networkService.request()
+        let response: Observable<TransactionDecodableModel> = networkService.request(endPoint: TransactionEndPoint.transactionList)
         
         return response
     }

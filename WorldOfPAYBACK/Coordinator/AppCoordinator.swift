@@ -15,8 +15,9 @@ class AppCoordinator {
     }
     
     func start() {
-        let netService = NetworkService(endPoint: TransactionEndPoint.transactionList)
-        let localDS = TransactionJsonReaderDataSource()
+        let netService = NetworkService()
+        let fileReader = JsonReader()
+        let localDS = TransactionJsonReaderDataSource(fileReader: fileReader)
         let remoteDS = TransactionURLSessionDataSource(networkService: netService)
         let repo = TransactionListRepositoryImpl(remoteDataSource: remoteDS, localDataSource: localDS)
         let vm = TransactionListViewModel(transactionRepository: repo)

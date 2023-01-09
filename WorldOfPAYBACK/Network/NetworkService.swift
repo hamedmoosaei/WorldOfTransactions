@@ -9,18 +9,12 @@ import Foundation
 import RxSwift
 
 protocol NetworkServer {
-    func request<T: Decodable>() -> Observable<T>
+    func request<T: Decodable>(endPoint: EndPoint) -> Observable<T>
 }
 
 struct NetworkService: NetworkServer {
     
-    private let endPoint: EndPoint
-    
-    init(endPoint: EndPoint) {
-        self.endPoint = endPoint
-    }
-    
-    func request<T: Decodable>() -> Observable<T> {
+    func request<T: Decodable>(endPoint: EndPoint) -> Observable<T> {
         return Observable.just(endPoint.baseUrl)
             .flatMap { url -> Observable<Data> in
                 let request = URLRequest(url: url)
