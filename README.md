@@ -4,7 +4,7 @@
 
 World of Transactions is a sample swift app that has a list of transactions with the ability to filter the list.
 
-This is a practice for using RxSwift in a MVVM project.
+This is a practice for using RxSwift in an MVVM project.
 
 
 
@@ -16,7 +16,7 @@ This is a practice for using RxSwift in a MVVM project.
 - Repository and DataSource
 - Solid principles almost applied 
 - Clean code rules almost applied
-
+- All UI parts are implemented programmatically 
 
 ## TODO
 - [ ] Unit Test
