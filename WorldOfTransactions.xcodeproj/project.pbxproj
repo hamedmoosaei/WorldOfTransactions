@@ -265,8 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				05AC65602920E51F0042CB5B /* WorldOfTransactions */,
-				05AC65772920E5200042CB5B /* WorldOfPAYBACKTests */,
-				05AC65812920E5200042CB5B /* WorldOfPAYBACKUITests */,
+				05AC65772920E5200042CB5B /* WorldOfTransactionsTests */,
+				05AC65812920E5200042CB5B /* WorldOfTransactionsUITests */,
 				05AC655F2920E51F0042CB5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -296,21 +296,21 @@
 			path = WorldOfTransactions;
 			sourceTree = "<group>";
 		};
-		05AC65772920E5200042CB5B /* WorldOfPAYBACKTests */ = {
+		05AC65772920E5200042CB5B /* WorldOfTransactionsTests */ = {
 			isa = PBXGroup;
 			children = (
 				05AC65782920E5200042CB5B /* WorldOfPAYBACKTests.swift */,
 			);
-			path = WorldOfPAYBACKTests;
+			path = WorldOfTransactionsTests;
 			sourceTree = "<group>";
 		};
-		05AC65812920E5200042CB5B /* WorldOfPAYBACKUITests */ = {
+		05AC65812920E5200042CB5B /* WorldOfTransactionsUITests */ = {
 			isa = PBXGroup;
 			children = (
 				05AC65822920E5200042CB5B /* WorldOfPAYBACKUITests.swift */,
 				05AC65842920E5200042CB5B /* WorldOfPAYBACKUITestsLaunchTests.swift */,
 			);
-			path = WorldOfPAYBACKUITests;
+			path = WorldOfTransactionsUITests;
 			sourceTree = "<group>";
 		};
 		05BD5416296BE70F001E9AF6 /* Remote */ = {
