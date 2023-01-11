@@ -1,13 +1,13 @@
 //
-//  WorldOfPAYBACKUITestsLaunchTests.swift
-//  WorldOfPAYBACKUITests
+//  WorldOfTransactionsUITestsLaunchTests.swift
+//  WorldOfTransactionsUITests
 //
 //  Created by Hamed on 11/13/22.
 //
 
 import XCTest
 
-final class WorldOfPAYBACKUITestsLaunchTests: XCTestCase {
+final class WorldOfTransactionsUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

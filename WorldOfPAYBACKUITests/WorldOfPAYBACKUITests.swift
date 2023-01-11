@@ -1,13 +1,13 @@
 //
-//  WorldOfPAYBACKUITests.swift
-//  WorldOfPAYBACKUITests
+//  WorldOfTransactionsUITests.swift
+//  WorldOfTransactionsUITests
 //
 //  Created by Hamed on 11/13/22.
 //
 
 import XCTest
 
-final class WorldOfPAYBACKUITests: XCTestCase {
+final class WorldOfTransactionsUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
