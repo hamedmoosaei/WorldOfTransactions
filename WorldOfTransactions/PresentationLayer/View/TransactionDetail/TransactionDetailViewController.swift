@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class transactionDetailViewController: UIViewController {
-    private let viewModel: TransactionDetailViewModel
+    private let viewModel: TransactionDetailViewModelProtocol
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -25,7 +25,7 @@ class transactionDetailViewController: UIViewController {
         return label
     }()
     
-    init(viewModel: TransactionDetailViewModel) {
+    init(viewModel: TransactionDetailViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: .none)
     }

@@ -9,11 +9,25 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class TransactionListViewModel {
+protocol TransactionListViewModelProtocol {
+    func fetchTransactions()
+    func createFilterViewModel() -> FilterListViewModelProtocol
+    func createDetailViewModel(indexPath: IndexPath) -> TransactionDetailViewModel
     
-    public private(set) var transactionModel: BehaviorRelay<[TransactionListItemModel]> = BehaviorRelay(value: [])
-    public private(set) var isLoading: PublishSubject<Bool> = PublishSubject()
-    public private(set) var totalText: PublishSubject<String> = PublishSubject()
+    var transactionModelObservable: Observable<[TransactionListItemModel]> { get }
+    var isLoadingDriver: Driver<Bool> { get }
+    var totalTextDriver: Driver<String> { get }
+}
+
+class TransactionListViewModel: TransactionListViewModelProtocol {
+    
+    public var transactionModelObservable: Observable<[TransactionListItemModel]>
+    public var isLoadingDriver: Driver<Bool>
+    public var totalTextDriver: Driver<String>
+    
+    private var transactionModel: BehaviorRelay<[TransactionListItemModel]> = BehaviorRelay(value: [])
+    private var isLoading: PublishSubject<Bool> = PublishSubject()
+    private var totalText: PublishSubject<String> = PublishSubject()
     
     private let transactionRepository: TransactionListRepository
     
@@ -22,20 +36,23 @@ class TransactionListViewModel {
 
     init(transactionRepository: TransactionListRepository) {
         self.transactionRepository = transactionRepository
+        self.transactionModelObservable = transactionModel.asObservable()
+        self.isLoadingDriver = isLoading.asDriver(onErrorJustReturn: false)
+        self.totalTextDriver = totalText.asDriver(onErrorJustReturn: "")
     }
     
-    func fetchTransactions() {
+    public func fetchTransactions() {
         isLoading.onNext(true)
         transactionRepository.getTransactionList().subscribe(onNext: saveNewTransactionList).disposed(by: disposeBag)
     }
     
-    func createFilterViewModel() -> FilterListViewModel {
+    public func createFilterViewModel() -> FilterListViewModelProtocol {
         let viewModel = FilterListViewModel(model: filterListModel)
-        viewModel.filteredList.subscribe(onNext: filterTransactionList).disposed(by: disposeBag)
+        viewModel.filteredListObservable.subscribe(onNext: filterTransactionList).disposed(by: disposeBag)
         return viewModel
     }
     
-    func createDetailViewModel(indexPath: IndexPath) -> TransactionDetailViewModel {
+    public func createDetailViewModel(indexPath: IndexPath) -> TransactionDetailViewModel {
         let selectedModel = transactionModel.value[indexPath.row]
         let detailModel = TransactionDetailModel(partnerDisplayName: selectedModel.displayName, transactionDetailDescription: selectedModel.description)
         let detailViewModel = TransactionDetailViewModel(transactionDetailModel: detailModel)

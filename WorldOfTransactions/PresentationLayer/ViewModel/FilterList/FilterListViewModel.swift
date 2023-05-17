@@ -7,18 +7,30 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
-class FilterListViewModel {
-    var filterModel: FilterListModel
+protocol FilterListViewModelProtocol {
+    var filterList: Observable<[FilterItem]> { get }
+    var title: String { get }
+    var filteredListObservable: Observable<FilterListModel> { get }
     
-    var tableViewModel: Observable<[FilterItem]> {
-        return Observable.just(filterModel.items)
-    }
+    func changeItemIsSelected(indexPath: IndexPath, isSelected: Bool)
+    func emitFilteredList()
+}
+
+class FilterListViewModel: FilterListViewModelProtocol {
+    public var filterList: Observable<[FilterItem]>
+    public var title: String
+    public var filteredListObservable: Observable<FilterListModel>
     
-    var filteredList: PublishSubject<FilterListModel> = PublishSubject()
+    private var filteredList: PublishSubject<FilterListModel> = PublishSubject()
+    private var filterModel: FilterListModel
     
     init(model: FilterListModel) {
         self.filterModel = model
+        self.title = filterModel.title
+        self.filterList = Observable.just(filterModel.items)
+        self.filteredListObservable = filteredList.asObservable()
     }
     
     func changeItemIsSelected(indexPath: IndexPath, isSelected: Bool) {

@@ -11,7 +11,7 @@ import RxSwift
 
 class FilterListViewController: UIViewController {
     
-    private var viewModel: FilterListViewModel
+    private var viewModel: FilterListViewModelProtocol
     private var disposeBag = DisposeBag()
         
     private lazy var tableView: UITableView = {
@@ -30,7 +30,7 @@ class FilterListViewController: UIViewController {
         return button
     }()
     
-    init(viewModel: FilterListViewModel) {
+    init(viewModel: FilterListViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: .none)
     }
@@ -86,11 +86,11 @@ class FilterListViewController: UIViewController {
 extension FilterListViewController: UITableViewDelegate {
     
     private func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.filterModel.title
+        return viewModel.title
     }
     
     private func bindTableViewDataSource() {
-        viewModel.tableViewModel.bind(to: tableView.rx.items(cellIdentifier: "FilterListViewCell", cellType: FilterListViewCell.self)) { (row, model, cell) in
+        viewModel.filterList.bind(to: tableView.rx.items(cellIdentifier: "FilterListViewCell", cellType: FilterListViewCell.self)) { (row, model, cell) in
             cell.nameLabel.text = model.title
             cell.accessoryType = model.isSelected ? .checkmark : .none
         }.disposed(by: disposeBag)

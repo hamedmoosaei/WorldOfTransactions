@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class TransactionListViewController: UIViewController {
-    private var viewModel: TransactionListViewModel
+    private var viewModel: TransactionListViewModelProtocol
     private var disposeBag = DisposeBag()
     
     private lazy var tableView: UITableView = {
@@ -42,7 +42,7 @@ class TransactionListViewController: UIViewController {
     
     private lazy var totalView = TotalAmountView()
     
-    init(viewModel: TransactionListViewModel) {
+    init(viewModel: TransactionListViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: .none)
     }
@@ -97,13 +97,11 @@ class TransactionListViewController: UIViewController {
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        viewModel.totalText
-            .asDriver(onErrorJustReturn: "")
+        viewModel.totalTextDriver
             .drive(totalView.valueLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.isLoading
-            .asDriver(onErrorJustReturn: false)
+        viewModel.isLoadingDriver
             .drive(activityIndicator.rx.isAnimating)
             .disposed(by: disposeBag)
         
@@ -133,7 +131,7 @@ class TransactionListViewController: UIViewController {
 extension TransactionListViewController: UITableViewDelegate {
     
     private func bindTableViewDataSource() {
-        viewModel.transactionModel
+        viewModel.transactionModelObservable
             .bind(to: tableView.rx.items(cellIdentifier: "TransactionListCellView", cellType: TransactionListCellView.self)) { (row, model, cell) in
                 cell.transactionModel.onNext(model)
             }.disposed(by: disposeBag)

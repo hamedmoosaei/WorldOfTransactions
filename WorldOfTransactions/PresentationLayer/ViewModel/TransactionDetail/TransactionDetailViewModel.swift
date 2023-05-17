@@ -7,8 +7,12 @@
 
 import Foundation
 
-class TransactionDetailViewModel {
-    let transactionDetailModel: TransactionDetailModel
+protocol TransactionDetailViewModelProtocol {
+    var transactionDetailModel: TransactionDetailModel { get }
+}
+
+class TransactionDetailViewModel: TransactionDetailViewModelProtocol {
+    public var transactionDetailModel: TransactionDetailModel
     
     init(transactionDetailModel: TransactionDetailModel) {
         self.transactionDetailModel = transactionDetailModel
